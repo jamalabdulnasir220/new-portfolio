@@ -1,4 +1,6 @@
 import gpt from "../assets/projects/gpt (2).png";
+import des from "../assets/projects/des.png";
+import birth from '../assets/projects/birth.png'
 
 export const HERO_CONTENT = `I am a passionate frontend developer with a knack for crafting robust and scalable web applications. With 3 years of hands-on experience, I have honed my skills in front-end technologies like React and Next.js, as well as technologies like TailwindCSS, Redux, HTML5, and CSS3. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
 
@@ -44,6 +46,24 @@ export const PROJECTS = [
     technologies: ["React", "TailwindCSS", "Javascript", "Redux", "Firebase"],
     live: 'https://netflixgpt-2cf9b.web.app/',
     code: 'https://github.com/jamalabdulnasir220/NetflixGPT'
+  },
+  {
+    title: "Destination Experience",
+    image: des,
+    description:
+      "A destination Experience application",
+    technologies: ["React", "TailwindCSS", "Typescript", "Redux Toolkit", "Tanstack Router"],
+    live: 'http://www.bayelsaxp.com',
+    code: 'https://github.com/pkaylabs/dxpdashboard.git'
+  },
+  {
+    title: "BirthNon",
+    image: birth,
+    description:
+      "A multi vendor Ecommerce Application with admin dashboard",
+    technologies: ["React", "TailwindCSS", "Typescript", "Redux Toolkit", "Material UI"],
+    live: 'https://www.birthnon.com/',
+    code: 'https://github.com/pkaylabs/birthsales-frontend.git'
   },
 
 ];
