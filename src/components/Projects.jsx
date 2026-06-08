@@ -1,69 +1,72 @@
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import SectionHeading from "./SectionHeading";
 
 const Projects = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4">
-      <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.5 }}
-        className="my-20 text-center text-4xl"
-      >
+    <section id="projects" className="section-border section-padding">
+      <SectionHeading subtitle="A selection of work I've built and contributed to">
         Projects
-      </motion.h2>
-      <div>
+      </SectionHeading>
+
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {PROJECTS.map((project, index) => (
-          <div className="mb-8 flex flex-wrap lg:justify-center" key={index}>
-            <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: -100 }}
-              transition={{ duration: 1 }}
-              className="w-full lg:w-1/4 "
-            >
+          <motion.article
+            key={project.title}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="card group flex flex-col overflow-hidden p-0"
+          >
+            <div className="relative aspect-video overflow-hidden bg-neutral-800">
               <img
                 src={project.image}
-                width={150}
-                height={150}
                 alt={project.title}
-                className="mb-6 rounded"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="flex gap-5">
-                <button
-                  onClick={() => window.open(project.live, "_target")}
-                  className="py-2 px-4 bg-blue-400 rounded-lg text-center font-semibold text-sm hover:opacity-80"
+              <div className="absolute inset-0 flex items-center justify-center gap-3 bg-neutral-950/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500 text-neutral-950 transition-transform hover:scale-110"
+                  aria-label={`View ${project.title} live`}
                 >
-                  Live
-                </button>
-                <button
-                  onClick={() => window.open(project.code, "_target")}
-                  className="py-2 px-4 bg-blue-400 rounded-lg text-center font-semibold text-sm hover:opacity-80"
+                  <FaExternalLinkAlt size={14} />
+                </a>
+                <a
+                  href={project.code}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-600 bg-neutral-900 text-white transition-transform hover:scale-110"
+                  aria-label={`View ${project.title} source code`}
                 >
-                  Code
-                </button>
+                  <FaGithub size={16} />
+                </a>
               </div>
-            </motion.div>
-            <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: 100 }}
-              transition={{ duration: 1 }}
-              className="w-full max-w-xl lg:w-3/4"
-            >
-              <h6 className="mb-2 font-semibold">{project.title}</h6>
-              <p className="mb-4 text-neutral-400">{project.description}</p>
-              {project.technologies.map((tech, index) => (
-                <span
-                  className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-900"
-                  key={index}
-                >
-                  {tech}
-                </span>
-              ))}
-            </motion.div>
-          </div>
+            </div>
+
+            <div className="flex flex-1 flex-col p-5">
+              <h3 className="mb-2 text-lg font-semibold text-white">
+                {project.title}
+              </h3>
+              <p className="mb-4 flex-1 text-sm leading-relaxed text-neutral-400">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech) => (
+                  <span key={tech} className="tech-badge">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.article>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

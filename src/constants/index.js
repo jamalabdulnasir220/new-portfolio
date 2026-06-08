@@ -1,18 +1,33 @@
-import gpt from "../assets/projects/gpt (2).png";
-import des from "../assets/projects/des.png";
-import birth from '../assets/projects/birth.png'
+import showqueue from '../assets/projects/showqueue-thumbnail.png'
+import devconnectThumbnail from '../assets/projects/devconnect-thumbnail.png'
+import ghanabiteThumbnail from '../assets/projects/ghanabite-thumbnail.png'
+import resume from '../assets/resume.pdf'
 
-export const HERO_CONTENT = `I am a passionate frontend developer with a knack for crafting robust and scalable web applications. With 3 years of hands-on experience, I have honed my skills in front-end technologies like React and Next.js, as well as technologies like TailwindCSS, Redux, HTML5, and CSS3. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
+export const HERO_CONTENT = `Hi, I'm Jamal Nasir 👋
 
-export const ABOUT_TEXT = `I am a dedicated and versatile frontend developer with a passion for creating efficient and user-friendly web applications. With 3 years of professional experience, I have worked with a variety of technologies, including React, Next.js, Redux, TailwindCSS, HTML5, and CSS3. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new technologies, and contributing to open-source projects.`;
+Full-Stack Software Developer building modern web applications, scalable backend services, and cloud-native solutions.
+
+Turning ideas into reliable products with React, Node.js, ASP.NET Core, Docker, and AWS.
+`;
+
+export const ABOUT_TEXT = `I'm Jamal Nasir, a Full-Stack Software Developer passionate about building modern web applications and scalable backend services.
+
+With experience in React, Node.js, Express, MongoDB, PostgreSQL, and ASP.NET Core, I enjoy turning ideas into real-world products that deliver value to users. My work spans from developing responsive user interfaces and RESTful APIs to deploying production-ready applications on AWS and configuring cloud infrastructure.
+
+I have built projects including e-commerce platforms, business management dashboards, marketplace applications, and administrative systems, while continuously expanding my knowledge of backend architecture, cloud computing, Docker, and system design.
+
+I am driven by continuous learning, problem-solving, and creating software that is reliable, maintainable, and impactful. Currently, I am deepening my expertise in backend engineering, cloud technologies, and scalable system design while building projects that challenge me to grow as a developer.
+
+When I'm not coding, you'll find me exploring new technologies, documenting my learning journey, and sharing insights with the developer community.
+`;
 
 export const EXPERIENCES = [
   {
     year: "2024 - Present",
-    role: "Frontend Developer",
+    role: "Full Stack Engineer",
     company: "Pkay Software Consultancy",
-    description: `Lead a team in developing and maintaining web applications using JavaScript, Typescript React.js, and Next.js. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance. Collaborated with stakeholders to define project requirements and timelines.`,
-    technologies: ["Javascript", "React.js", "Next.js", "Redux"],
+    description: `Worked on MERN applications, developing and maintaining full-stack features with React.js, Node.js, Express, and MongoDB. Built responsive user interfaces, integrated frontend components with backend APIs, implemented application logic, and collaborated with stakeholders to define project requirements and timelines.`,
+    technologies: ["Javascript", "React.js", "Node.js", "Express", "MongoDB", "Redux"],
   },
   {
     year: "2022 - 2023",
@@ -39,31 +54,31 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "NetflixGPT",
-    image: gpt,
+    title: "Show Booking plaform",
+    image: showqueue,
     description:
-      "NetflixGPT combines the power of Netflix and AI to create an online video streaming platform with advanced search functionality powered by Google Gemini to show results based on user prompts.",
-    technologies: ["React", "TailwindCSS", "Javascript", "Redux", "Firebase"],
-    live: 'https://netflixgpt-2cf9b.web.app/',
-    code: 'https://github.com/jamalabdulnasir220/NetflixGPT'
+      "ShowQueue is a modern movie booking platform that allows users to discover trending movies, explore show details, book cinema tickets, and reserve seats for upcoming screenings through a fast and intuitive user experience.",
+    technologies: ["React", "TailwindCSS", "Javascript", "Inngest", "Node.js", "Express", "MongoDB"],
+    live: 'https://moviestore-afrik.vercel.app',
+    code: 'https://github.com/jamalabdulnasir220/movieStore'
   },
   {
-    title: "Destination Experience",
-    image: des,
+    title: "Developer's Connect Platform",
+    image: devconnectThumbnail,
     description:
-      "A destination Experience application",
-    technologies: ["React", "TailwindCSS", "Typescript", "Redux Toolkit", "Tanstack Router"],
-    live: 'http://www.bayelsaxp.com',
-    code: 'https://github.com/pkaylabs/dxpdashboard.git'
+      "DevConnect is a networking platform designed to help developers discover, connect, and collaborate with like-minded professionals. Inspired by the swipe-based experience of modern social platforms, users can browse developer profiles, express interest, build connections, and expand their professional network within the tech community.",
+    technologies: ["React", "TailwindCSS", "Javascript", "Node.js", "Express", "MongoDB"],
+    live: 'http://13.51.237.44/',
+    code: 'https://github.com/jamalabdulnasir220/devConnect'
   },
   {
-    title: "BirthNon",
-    image: birth,
+    title: "GhanaBite",
+    image: ghanabiteThumbnail,
     description:
-      "A multi vendor Ecommerce Application with admin dashboard",
-    technologies: ["React", "TailwindCSS", "Typescript", "Redux Toolkit", "Material UI"],
-    live: 'https://www.birthnon.com/',
-    code: 'https://github.com/pkaylabs/birthsales-frontend.git'
+      "GhanaBite is a full-stack food ordering platform for discovering local Ghanaian restaurants, browsing authentic dishes, managing carts, processing secure Stripe payments, tracking live orders, and supporting restaurant operations through a manager dashboard.",
+    technologies: ["React", "TailwindCSS", "Typescript", "Node.js", "MongoDB", "Auth0", "Stripe"],
+    live: '#',
+    code: '#'
   },
 
 ];
@@ -72,4 +87,9 @@ export const CONTACT = {
   address: "",
   phoneNo: "+233 54 657 384 9",
   email: "techwithjamal@gmail.com",
+};
+
+export const RESUME = {
+  url: resume,
+  filename: "resume",
 };

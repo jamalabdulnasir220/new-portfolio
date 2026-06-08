@@ -1,61 +1,83 @@
 import { HERO_CONTENT } from "../constants";
-import profilePic from "../assets/kevinRushProfile.png";
 import { motion } from "framer-motion";
+import { HiArrowDown } from "react-icons/hi";
+import ResumeDownload from "./ResumeDownload";
 
 const container = (delay) => ({
-  hidden: { x: -100, opacity: 0 },
+  hidden: { y: 30, opacity: 0 },
   visible: {
-    x: 0,
+    y: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: delay },
+    transition: { duration: 0.6, delay },
   },
 });
 
 const Hero = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4 lg:mb-35">
-      <div className="flex flex-wrap">
-        <div className="w-full lg:w-1/2">
-          <div className="flex flex-col items-center lg:items-start">
-            <motion.h1
-              variants={container(0)}
-              initial="hidden"
-              animate="visible"
-              className="pb-16 text-6xl  font-thin tracking-tight lg:mt-16 lg:text-8xl"
-            >
-              Abdul Nasir Jamal
-            </motion.h1>
-            <motion.span
-              variants={container(0.5)}
-              initial="hidden"
-              animate="visible"
-              className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent"
-            >
-              Frontend Developer
-            </motion.span>
-            <motion.p
-              variants={container(1)}
-              initial="hidden"
-              animate="visible"
-              className="my-2 max-w-xl py-6 font-light tracking-tighter"
-            >
-              {HERO_CONTENT}
-            </motion.p>
-          </div>
+    <section id="hero" className="section-border section-padding">
+      <div className="relative flex min-h-[70vh] flex-col justify-center">
+        <div className="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-purple-500/10 blur-3xl" />
+
+        <div className="relative z-10 max-w-3xl">
+          <motion.p
+            variants={container(0)}
+            initial="hidden"
+            animate="visible"
+            className="mb-4 text-sm font-medium uppercase tracking-widest text-cyan-400"
+          >
+            Full-Stack Developer
+          </motion.p>
+
+          <motion.h1
+            variants={container(0.15)}
+            initial="hidden"
+            animate="visible"
+            className="mb-6 text-5xl font-bold leading-tight tracking-tight md:text-7xl"
+          >
+            Abdul Nasir{" "}
+            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              Jamal
+            </span>
+          </motion.h1>
+
+          <motion.p
+            variants={container(0.3)}
+            initial="hidden"
+            animate="visible"
+            className="mb-8 max-w-2xl text-lg leading-relaxed text-neutral-400"
+          >
+            {HERO_CONTENT}
+          </motion.p>
+
+          <motion.div
+            variants={container(0.45)}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-wrap gap-4"
+          >
+            <a href="#projects" className="btn-primary">
+              View Projects
+            </a>
+            <a href="#contact" className="btn-secondary">
+              Get in Touch
+            </a>
+            <ResumeDownload className="btn-secondary" />
+          </motion.div>
         </div>
-        {/* <div className="w-full lg:w-1/2 lg:p-8">
-          <div className="flex justify-center">
-            <motion.img
-              initial={{ x: 100, opacity: 0 }}
-              animate={{x: 0, opacity: 1}}
-              transition={{duration: 1, delay: 1.2}}
-              src={profilePic}
-              alt="profile picture"
-            />
-          </div>
-        </div> */}
+
+        <motion.a
+          href="#about"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 text-neutral-500 transition-colors hover:text-cyan-400"
+          aria-label="Scroll to about section"
+        >
+          <HiArrowDown className="animate-bounce" size={24} />
+        </motion.a>
       </div>
-    </div>
+    </section>
   );
 };
 
